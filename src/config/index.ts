@@ -1,7 +1,8 @@
 import dotenv, { DotenvConfigOutput, DotenvParseOutput } from 'dotenv'
 
 type Config = {
-    GOOGLE_PLACES_API_KEY: string
+    GOOGLE_PLACES_API_KEY: string,
+    PORT: string
 }
 
 const config:DotenvConfigOutput = dotenv.config();

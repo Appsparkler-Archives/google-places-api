@@ -1,9 +1,9 @@
 import express from 'express'
 import citiesMiddleware from './middlewares/cities'
-import dotenv from 'dotenv'
+import config from './config'
 
 const app = express()
-const port = 3000
+const port = config.PORT || 3000
 
 app.use('/api/cities/:query', citiesMiddleware)
 

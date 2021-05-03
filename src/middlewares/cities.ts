@@ -1,6 +1,6 @@
 import {Client, PlaceAutocompleteType} from '@googlemaps/google-maps-services-js'
 import { RequestHandler } from 'express';
-import key from './secrets'
+import config from '../config'
 
 const client = new Client({})
 
@@ -10,7 +10,7 @@ const citiesMiddleware: RequestHandler = async (req, res) => {
         params: {
             input: query,
             types: PlaceAutocompleteType.cities,
-            key
+            key: config.GOOGLE_PLACES_API_KEY
         } 
     });
     const cities = placesResponse.data;

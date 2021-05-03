@@ -10,7 +10,7 @@
   "scripts": {
     "build": "yarn tsc --outDir dist",
     "start-dev": "nodemon src/index.ts",
-    "start": "yarn build && node dist"
+    "start": "node dist"
   },
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.1.16",

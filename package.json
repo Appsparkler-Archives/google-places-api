@@ -4,6 +4,9 @@
   "main": "dist/index.js",
   "author": "Aakash Shah <subs@appsparkler.com>",
   "license": "MIT",
+  "engines": {
+    "node": "15.x"
+  },
   "scripts": {
     "build": "yarn tsc --outDir dist",
     "start": "nodemon src/index.ts"

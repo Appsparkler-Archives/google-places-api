@@ -1,0 +1,14 @@
+{
+  "name": "google-maps-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Aakash Shah <subs@appsparkler.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.1.16",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}

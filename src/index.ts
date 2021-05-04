@@ -3,12 +3,12 @@ import citiesMiddleware from './middlewares/cities'
 import config from './config'
 
 const app = express()
-const port = config.PORT || 3000
+const port = process.env.PORT || config.PORT 
 
 app.use('/api/cities/:query', citiesMiddleware)
 
 app.use('/', (req, res) => res.send('Hello!'))
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port || 3000}`)
+  console.log(`Example app listening at http://localhost:${port}`)
 })

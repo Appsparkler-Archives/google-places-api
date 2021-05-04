@@ -7,6 +7,8 @@ const port = config.PORT || 3000
 
 app.use('/api/cities/:query', citiesMiddleware)
 
+app.use('/', (req, res) => res.send('Hello!'))
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })

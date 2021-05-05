@@ -8,4 +8,6 @@ type Config = {
 const config:DotenvConfigOutput = dotenv.config();
 const parsedConfig:DotenvParseOutput = config.parsed as Config;
 
+Object.assign(process.env, parsedConfig);
+
 export default parsedConfig;

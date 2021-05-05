@@ -1,9 +1,9 @@
 import express from 'express'
 import citiesMiddleware from './middlewares/cities'
-import config from './config'
+import './config'
 
 const app = express()
-const port = process.env.PORT || config.PORT 
+const port = process.env.PORT
 
 app.use('/api/cities/:query', citiesMiddleware)
 

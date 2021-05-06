@@ -1,19 +1,16 @@
 import dotenv, { DotenvConfigOutput, DotenvParseOutput } from 'dotenv'
 
-type Config = {
-    GOOGLE_PLACES_API_KEY: string,
-    PORT: string
-}
-
 declare global {
     namespace NodeJS {
       interface ProcessEnv {
-        GOOGLE_PLACES_API_KEY: string
+        GOOGLE_PLACES_API_KEY: string,
+        PORT: string,
+        ALLOWED_ORIGINS: string
       }
     }
 }
 
 const config:DotenvConfigOutput = dotenv.config();
-const parsedConfig:DotenvParseOutput = config.parsed as Config;
+const parsedConfig:NodeJS.ProcessEnv = config.parsed as NodeJS.ProcessEnv;
 
 Object.assign(process.env, parsedConfig);

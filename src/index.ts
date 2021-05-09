@@ -15,7 +15,7 @@ app.use(router)
 app.use(bodyParser.json());
 app.use(morganMiddleware)
 app.use(corsMiddleware(process.env))
-app.use('/.netlify/functions/server', router)
+app.use('/.netlify/functions/index', router)
 app.use('/', (req, res) => res.sendFile(path.join('./index.html')))
 
 export const handler = serverless(app)

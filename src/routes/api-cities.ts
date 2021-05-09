@@ -4,10 +4,10 @@ import { RequestHandler } from 'express';
 const client = new Client({})
 
 const citiesRoute: RequestHandler = async (req, res) => {
-    const {query} = req.params;
+    const {input} = req.params;
     const placesResponse = await client.placeAutocomplete({
         params: {
-            input: query,
+            input,
             types: PlaceAutocompleteType.cities,
             key: process.env.GOOGLE_PLACES_API_KEY
         } 

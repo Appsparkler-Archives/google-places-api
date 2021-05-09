@@ -8,11 +8,12 @@
     "node": "15.x"
   },
   "scripts": {
-    "build": "yarn tsc --outDir dist",
+    "build-dist": "yarn tsc --outDir dist",
+    "build": "yarn clean && yarn build-dist && yarn copy-index.html && netlify-lambda build dist",
     "clean": "rimraf dist",
     "copy-index.html": "cp src/index.html ./dist/index.html",
     "start-dev": "nodemon src/server-local.ts",
-    "start": "yarn clean && yarn build && yarn copy-index.html && netlify-lambda build dist"
+    "start": "nodemon dist/server-local"
   },
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.1.16",

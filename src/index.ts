@@ -5,14 +5,16 @@ import path from 'path'
 import serverless from 'serverless-http'
 import router from './routes'
 import './config'
-
+// 
+const distPath = path.resolve('../src/index.html')
 const app = express()
-
-app.use(router)
-app.use(morganMiddleware)
+// 
 app.use(corsMiddleware(process.env))
+app.use(morganMiddleware)
+//
+app.use(router)
 app.use('/.netlify/functions/index', router)
-app.use('/', (req, res) => res.sendFile(path.join('./index.html')))
+app.use('/', (req, res) => res.sendFile(distPath))
 
 export const handler = serverless(app)
 

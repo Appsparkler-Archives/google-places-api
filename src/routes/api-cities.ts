@@ -3,7 +3,7 @@ import { RequestHandler } from 'express';
 
 const client = new Client({})
 
-const citiesMiddleware: RequestHandler = async (req, res) => {
+const citiesRoute: RequestHandler = async (req, res) => {
     const {query} = req.params;
     const placesResponse = await client.placeAutocomplete({
         params: {
@@ -16,4 +16,4 @@ const citiesMiddleware: RequestHandler = async (req, res) => {
     res.json(cities)
 }
 
-export default citiesMiddleware;
+export default citiesRoute;

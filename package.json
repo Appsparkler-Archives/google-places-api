@@ -9,9 +9,8 @@
   },
   "scripts": {
     "build-dist": "yarn tsc --outDir dist",
-    "build": "yarn clean && yarn build-dist && yarn copy-index.html && netlify-lambda build dist",
-    "clean": "rimraf dist functions",
-    "copy-index.html": "cp src/index.html ./dist/index.html",
+    "build": "yarn clean && yarn build-dist && netlify-lambda build dist",
+    "clean": "rimraf dist",
     "netlify-dev": "yarn build && netlify dev",
     "start-dev": "nodemon src/server-local.ts",
     "start": "nodemon dist/server-local"

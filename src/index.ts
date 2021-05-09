@@ -14,7 +14,6 @@ app.use(morganMiddleware)
 //
 app.use(router)
 app.use('/.netlify/functions/index', router)
-// app.use('/', (req, res) => res.sendFile(distPath))
 app.use('/', (req, res) => res.redirect('/.netlify/functions/index'))
 
 export const handler = serverless(app)

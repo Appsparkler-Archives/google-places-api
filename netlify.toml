@@ -1,6 +1,6 @@
 [build]
   command = "yarn && yarn build"
-  functions = "functions"
+  functions = "dist/functions"
 
 # [dev]
 #   framework = "#custom"

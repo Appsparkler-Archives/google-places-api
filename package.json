@@ -5,11 +5,11 @@
   "author": "Aakash Shah <subs@appsparkler.com>",
   "license": "MIT",
   "engines": {
-    "node": "15.x"
+    "node": "16.x"
   },
   "scripts": {
     "build-dist": "yarn tsc --outDir dist",
-    "build": "yarn clean && yarn build-dist && netlify-lambda build dist",
+    "build": "yarn clean && yarn build-dist && netlify-lambda build dist && cp _redirects dist/",
     "clean": "rimraf dist",
     "netlify-dev": "yarn build && netlify dev",
     "start-dev": "nodemon src/server-local.ts",
